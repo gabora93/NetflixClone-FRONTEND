@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import FormErrors from '../FormErrors/FormErrors';
 import login from '../../services/login';
 import './Login.css';
+import { Link } from 'react-router-dom';
 
 class Login extends Component{
 
@@ -112,7 +113,7 @@ class Login extends Component{
                         </div>
                         <button type='submit'>Login</button>
 
-                        <p className='message'>No te has Registrado? Crea una nueva Cuenta</p>
+                        <p className='message'>No te has Registrado? <Link to='/signup'>Crea una nueva Cuenta</Link></p>
                     </form>
                 </div>
             </div>

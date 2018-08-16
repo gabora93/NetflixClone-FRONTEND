@@ -7,6 +7,7 @@ import Login from '../Login/Login';
 import Singup from '../Signup/Signup';
 import Logout from '../Logout/Logout';
 import checkToken from '../../resolvers/checkToken';
+import Movies from '../Movies/Movies';
 
 class Routes extends Component{
 
@@ -32,6 +33,7 @@ class Routes extends Component{
                     <Route exact  path="/login" component={Login} />
                     <Route exact  path="/signup" component={Singup} />
                     <PrivateRoute exact path='/logout' component={Logout} />
+                    <PrivateRoute exact path='/movies' component={Movies} />
                 </main>
             </Router>
         )
