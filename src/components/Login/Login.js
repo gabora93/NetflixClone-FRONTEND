@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import FormErrors from '../FormErrors/FormErrors';
+import login from '../../services/login';
+import './Login.css';
 
 class Login extends Component{
 
@@ -13,11 +15,31 @@ class Login extends Component{
         errorMessage: ''
     }
 
+    submitForm = (e) => {
+        e.preventDefault();
+        login(this.state).then((resp)=>{
+            if(resp.status === 200){
+                let token = resp.data.token
+                localStorage.setItem('token',token);
+                this.props.history.push('/')
+            }else{
+                console.log(resp.data)
+            }
+        }).catch((err)=>{
+            console.log(err)
+        })
+
+    }
+
     handleUserInput = (e) => {
         const name = e.target.name;
         const value = e.target.value;
         this.setState({[name]: value},
-            ()=>{this.validateField(name,value)});
+            ()=>{
+                this.validateField(name,value)
+                console.log(this.state.email,'<<<email')
+                console.log(this.state.password,'<<<<pass')
+            });
         console.log(this.state.email,'<<<email')
         console.log(this.state.password,'<<<<pass')
     }
@@ -75,7 +97,7 @@ class Login extends Component{
                         <p>{this.error}</p>
 
                     </div>
-                    <form className='login-form'>
+                    <form className='login-form' onSubmit={this.submitForm}>
                         <div className={`form-group ${this.errorClass(this.state.formErrors.email)}`}>
                             <label htmlFor="email">Email Addres:</label>
                             <input type="email" required className='form-control' name='email'
@@ -88,7 +110,7 @@ class Login extends Component{
                                 placeholder='Password' value={this.state.password}
                                 onChange={this.handleUserInput}/>
                         </div>
-                        <button type='button'>Login</button>
+                        <button type='submit'>Login</button>
 
                         <p className='message'>No te has Registrado? Crea una nueva Cuenta</p>
                     </form>
