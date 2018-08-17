@@ -12,6 +12,7 @@ export default () => {
             query:`
                 query{
                     allMovies{
+                        _id,
                         name,
                         image,
                         synopsis,

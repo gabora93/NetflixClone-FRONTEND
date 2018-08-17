@@ -8,6 +8,8 @@ import Singup from '../Signup/Signup';
 import Logout from '../Logout/Logout';
 import checkToken from '../../resolvers/checkToken';
 import Movies from '../Movies/Movies';
+import Movie from '../Movie/Movie';
+import WatchMovie from '../WatchMovie/WatchMovie';
 
 class Routes extends Component{
 
@@ -34,6 +36,8 @@ class Routes extends Component{
                     <Route exact  path="/signup" component={Singup} />
                     <PrivateRoute exact path='/logout' component={Logout} />
                     <PrivateRoute exact path='/movies' component={Movies} />
+                    <PrivateRoute exact path='/movie/:id' component={Movie}/>
+                    <PrivateRoute exact path='/ver/:id' component={WatchMovie}/>
                 </main>
             </Router>
         )
