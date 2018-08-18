@@ -5,7 +5,7 @@ import constantes from '../const';
 export default (id) => {
     
     return axios({
-        url:constantes.url+'graphql',
+        url:constantes.local+'graphql',
         method:'post',
         data:{
             query:`

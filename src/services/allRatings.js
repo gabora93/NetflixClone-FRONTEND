@@ -2,22 +2,19 @@ import axios from 'axios';
 import getToken from '../resolvers/getToken';
 import constantes from '../const';
 
-export default (id) => {
-    
+export default () => {
     return axios({
         url:constantes.local+'graphql',
         method:'post',
         data:{
             query:`
                 query{
-                    singleMovies(id:"${id}"){
+                    allRatings{
                         _id,
-                        name,
-                        url
-                                        }
+                        name
+                    }
                 }
-
             `
-        }, headers:{'Authorization':'JWT ' + getToken()}
+        },headers:{'Authorization': 'JWT ' +getToken()}
     })
 }

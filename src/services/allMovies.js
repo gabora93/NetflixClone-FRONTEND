@@ -6,7 +6,7 @@ export default () => {
 
 
     return axios ({
-        url:constante.url+'graphql',
+        url:constante.local+'graphql',
         method:'post',
         data:{
             query:`
