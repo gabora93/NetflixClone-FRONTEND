@@ -10,6 +10,7 @@ import checkToken from '../../resolvers/checkToken';
 import Movies from '../Movies/Movies';
 import Movie from '../Movie/Movie';
 import WatchMovie from '../WatchMovie/WatchMovie';
+import FormMovie from '../FormMovie/FormMovie';
 
 class Routes extends Component{
 
@@ -38,6 +39,7 @@ class Routes extends Component{
                     <PrivateRoute exact path='/movies' component={Movies} />
                     <PrivateRoute exact path='/movie/:id' component={Movie}/>
                     <PrivateRoute exact path='/ver/:id' component={WatchMovie}/>
+                    <PrivateRoute exact path='/movies/add' component={FormMovie}/>
                 </main>
             </Router>
         )

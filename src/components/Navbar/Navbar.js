@@ -20,6 +20,9 @@ class NavBar extends Component{
                         <Link className="nav-link" to="/movies">Movies</Link>
                     </li>
                     <li className="navbar-item">
+                        <Link className="nav-link" to="/movies/add">Add Movies</Link>
+                    </li>
+                    <li className="navbar-item">
                         <Link className="nav-link" to="/logout">Logout</Link>
                     </li>
                 </ul>
@@ -44,7 +47,7 @@ class NavBar extends Component{
     render(){
         return(
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-            <Link className="navbar-brand" to="/">Navbar</Link>
+            <Link className="navbar-brand" to="/">Nectflix.</Link>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
             </button>

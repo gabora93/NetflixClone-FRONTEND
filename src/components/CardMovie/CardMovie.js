@@ -27,6 +27,7 @@ class CardMovie extends Component{
                     allowHalf
                     onChange={(rank)=>this.props.getRank(this.state.movie._id, rank)}
                      />
+                     <p>{this.state.rank}</p>
                 </div>
             </div>
         )
