@@ -11,6 +11,7 @@ import Movies from '../Movies/Movies';
 import Movie from '../Movie/Movie';
 import WatchMovie from '../WatchMovie/WatchMovie';
 import FormMovie from '../FormMovie/FormMovie';
+import DeleteMovie from '../DeleteMovie/DeleteMovie';
 
 class Routes extends Component{
 
@@ -40,6 +41,7 @@ class Routes extends Component{
                     <PrivateRoute exact path='/movie/:id' component={Movie}/>
                     <PrivateRoute exact path='/ver/:id' component={WatchMovie}/>
                     <PrivateRoute exact path='/movies/add' component={FormMovie}/>
+                    <PrivateRoute exact path='/movie/delete/:id' component={DeleteMovie}/>
                 </main>
             </Router>
         )

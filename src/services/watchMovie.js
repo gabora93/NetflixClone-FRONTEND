@@ -13,7 +13,8 @@ export default (id) => {
                     singleMovies(id:"${id}"){
                         _id,
                         name,
-                        url
+                        url,
+                        image
                                         }
                 }
 

@@ -62,6 +62,9 @@ class Movie extends Component{
                                     Back
                                 </Link>
                             </div>
+                            <Link className="btn btn-danger boton-volver" to={`/movie/delete/${_id}`}>
+                                    DELETE MOVIE
+                                </Link>
                         </div>
                     </div>
                 )

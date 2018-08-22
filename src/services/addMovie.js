@@ -10,7 +10,7 @@ export default(data)=>{
         genre:"${data.genre}",
         url:"${data.url}",
         director:"${data.director}",
-        year:"${data.year}",
+        year: `+`${data.year}`+` ,
         image:"${data.image}",
         rating:"${data.rating}"
     }

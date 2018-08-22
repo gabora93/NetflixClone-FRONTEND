@@ -17,7 +17,7 @@ class FormMovie extends Component{
         year:"",
         url:"",
         image:"",
-        ratings:"",
+        rating:"",
         allGenres:[],
         allRatings:[],
         formfull: false,
@@ -63,6 +63,10 @@ class FormMovie extends Component{
     handleSubmit = (e) => {
         e.preventDefault();
         console.log("hola")
+        // this.setState({
+        //     year: parseInt(this.state.year)
+        // })
+        console.log(this.state)
         addMovie(this.state).then((resp)=>{
             console.log(resp.data.data)
             if(resp.data.data.addMovie._id){
@@ -115,7 +119,7 @@ class FormMovie extends Component{
                     </div>
                     <div className="form-group">
                         <label htmlFor="year">Year:</label>
-                        <input type="text" value={this.state.year}
+                        <input type="number" value={this.state.year}
                             className="form-control" name="year"
                             onChange={this.onChangeInput}
                             />
@@ -136,8 +140,8 @@ class FormMovie extends Component{
                     </div>
 
                     <div className="form-group">
-                        <label htmlFor="genre">Rating:</label>
-                        {this.createSelecter(this.state.allRatings,"ratings")}
+                        <label htmlFor="rating">Rating:</label>
+                        {this.createSelecter(this.state.allRatings,"rating")}
                     </div>
                     <button type="submit" className="btn btn-info">Save</button>
                 </form>
